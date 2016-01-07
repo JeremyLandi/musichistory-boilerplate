@@ -4,44 +4,138 @@
 <head>
   <meta charset="utf-8">
   <title>Music History</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<section>
-	
+<div id="container">
 
-</section>
+	<nav id="nav">      <!-------- navigation ------>
+		<li><a href"#">View Music</li>
+		<li><a href"#">Add Music</li>
+		<li><a href"#">Profile</li>
+	</nav>
 
-<form action="">
-  <select name="artist">
-    <option value="Elvis">Elvis</option>
-    <option value="The Beatles">The Beatles</option>
-    <option value="Rolling Stones">Rolling Stones</option>
-    <option value="Pearl Jam">Pearl Jam</option>
-    <option value="Band">Band</option>
-  </select>
- 
-</form>
+	<div id="forms" class="clear">
 
-<form action="">
-  <select name="album">
-    <option value="Elvis">album 1</option>
-    <option value="The Beatles">album 2</option>
-    <option value="Rolling Stones">album 3</option>
-    <option value="Pearl Jam">album 4</option>
-    <option value="Band">album 5</option>
-  </select>
-</form>
+		<form id="length_form" action="" >
+		  <h2>Song Length:</h2> <br>
+		  <input type="range" name="points" min="0" max="10">
+		</form>
 
-<form action="">
-	<input type="checkbox" name="genre" value="Rock"> Rock
-	<input type="checkbox" name="genre" value="Classical"> Classical
-	<input type="checkbox" name="genre" value="Jazz"> Jazz
-	<input type="checkbox" name="genre" value="Pop"> Pop
-	<input type="checkbox" name="genre" value="Blues"> Blues
-	<input type="checkbox" name="genre" value="Hip Hop"> Hip Hop
-</form>
+		<br>
 
+		<form id="artist_form" action=""> <!--------- artist ------>
+		  <h2>Artist: <h2>
+		  <select name="artist">
+		  	<option value="" disabled="disabled">- Artist -</option>  	
+		    <option value="Elvis">Elvis</option>
+		    <option value="The Beatles">The Beatles</option>
+		    <option value="Rolling Stones">Rolling Stones</option>
+		    <option value="Pearl Jam">Pearl Jam</option>
+		    <option value="Led Zeppelin">Led Zeppelin</option> 
+
+		  </select>
+		</form>
+
+		<br>
+
+		<form id="album_form" action=""> <!--------- album ------>
+		  <h2>Album: </h2>
+		  <select name="album">
+		  <option value="" disabled="disabled">- Album -</option>
+			  <optgroup label="Elvis">
+			    <option value="Elvis">album 1</option>
+			    <option value="The Beatles">album 2</option>
+			    <option value="Rolling Stones">album 3</option>
+			    <option value="Pearl Jam">album 4</option>
+			    <option value="Band">album 5</option>
+			  </optgroup>
+
+			  <optgroup label="The Beatles">
+			    <option value="Elvis">album 1</option>
+			    <option value="The Beatles">album 2</option>
+			    <option value="Rolling Stones">album 3</option>
+			    <option value="Pearl Jam">album 4</option>
+			    <option value="Band">album 5</option>
+			  </optgroup>
+
+			  <optgroup label="Rolling Stones">
+			    <option value="Elvis">album 1</option>
+			    <option value="The Beatles">album 2</option>
+			    <option value="Rolling Stones">album 3</option>
+			    <option value="Pearl Jam">album 4</option>
+			    <option value="Band">album 5</option>
+			  </optgroup>
+
+			  <optgroup label="Pearl Jam">
+			    <option value="Elvis">album 1</option>
+			    <option value="The Beatles">album 2</option>
+			    <option value="Rolling Stones">album 3</option>
+			    <option value="Pearl Jam">album 4</option>
+			    <option value="Band">album 5</option>
+			  </optgroup>
+
+			  <optgroup label="Led Zepplin">
+			    <option value="Elvis">album 1</option>
+			    <option value="The Beatles">album 2</option>
+			    <option value="Rolling Stones">album 3</option>
+			    <option value="Pearl Jam">album 4</option>
+			    <option value="Band">album 5</option>
+			  </optgroup>
+		  </select>
+		</form>
+
+		 <br>
+
+		<form id="genre_form" action="">  <!--------- genre  ------>
+			<h2>Genre:</h2> 
+			<br>
+			<ul>
+				<li><input type="checkbox" name="genre" value="Rock"> Rock </li>
+				<li><input type="checkbox" name="genre" value="Classical"> Classical </li>      
+				<li><input type="checkbox" name="genre" value="Jazz"> Jazz</li>
+				<li><input type="checkbox" name="genre" value="Pop"> Pop</li>
+				<li><input type="checkbox" name="genre" value="Blues"> Blues</li>
+				<li><input type="checkbox" name="genre" value="Hip Hop"> Hip Hop</li>
+			</ul>	
+		</form>
+
+		<input id="button" type="submit" value="Filter">
+	</div>          <!--  end of "form" Div  -->
+
+	<div id="info">
+		<h2>Song Name</h2>
+			<ul>	
+				<li>Artist</li>
+				<li>Album</li>
+				<li>Genre</li>
+			</ul>
+			<br>
+		<h2>Song Name</h2>
+			<ul>	
+				<li>Artist</li>
+				<li>Album</li>
+				<li>Genre</li>
+			</ul>
+			<br>
+		<h2>Song Name</h2>
+			<ul>	
+				<li>Artist</li>
+				<li>Album</li>
+				<li>Genre</li>
+			</ul>
+			<br>
+		<h2>Song Name</h2>
+			<ul>	
+				<li>Artist</li>
+				<li>Album</li>
+				<li>Genre</li>
+			</ul>			
+	</div>
+
+</div> 				 <!-- End of container Div -->
 </body>
 </html>
