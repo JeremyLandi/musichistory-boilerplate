@@ -1,0 +1,159 @@
+.clear {
+	clear: both;
+}
+html {
+	font-size:100%;
+	line-height:1.5;
+}
+body {
+	font-family: 'Open Sans', sans-serif;
+    background-color:#FFF;
+    font-size: .8em;
+    font-weight: bold;
+    padding:0;
+    margin:0;
+}
+select {
+	width: 150px;
+	font-size: 1.1em;
+	-webkit-appearance: none;
+   	-moz-appearance:    none;
+   	appearance:         none;
+   	padding: 2px;
+}
+label {
+    font-size:1.2em; 
+}
+li {
+	list-style: none;
+}
+
+footer {
+	display: inline-block;
+	margin-left: 79%;
+}
+
+.container {
+	margin: 25px auto 0;
+	max-width: 778px;
+	padding: 10px 25px;
+	background-color: rgba(200,200,200,.5);
+	box-shadow: -5px -5px 200px #667;
+	border: 1px outset rgba(0,0,0,.5);
+}
+
+
+.nav {								/*** nav area **/
+	background-color: #FFB4B0;
+	border: 2px solid black;
+	margin: 10px 5px;
+	padding: 10px;
+	font-size: .85em;
+}
+.nav li {
+	border-right: 1px black solid;
+	display: inline;
+	cursor: pointer;
+	padding: 5px;
+	margin-left: 5px;
+}
+
+.nav li a {
+	padding: 5px 25px 5px 5px;
+}
+nav a:hover {
+    color:#fff; 
+}
+.song {
+	border: 2px solid black;
+	margin-bottom: 10px;
+}
+
+.forms {          					/*** forms area **/
+	background-color: #4DD7FA;
+	border: 2px solid black;
+	width: 23%;
+	max-width: 185px;
+	min-width: 164px;
+	float: left;
+	padding: 1em;
+	margin: 5px 2px;
+}
+.album_form {
+	margin-top: 15px;
+}
+.artist_form {
+	width: 100px;
+	margin-top: 10px;
+}
+.checkbox_left {
+	float: left;
+}
+.checkbox_right {
+	float: right;
+}
+
+
+.submit {							/***** button  *****/
+	margin: 20px 10%;
+	border-radius: 5px;
+	border: 1px outset #000;
+	width: 80%;
+	font-size: 1.5em;
+	background-color: rgb(210,210,210);
+}
+.moreSongs {
+	margin-left: 40%;
+	margin-top: 20px;
+	font-size: 1.2em;
+	border-radius: 5px;
+	background-color: #e5e5ea;
+}
+.deleteButton {
+	float: right;
+	margin-right: 30px;
+	margin-top: 45px;
+	font-size: 1em;
+	border-radius: 5px;
+	background-color: #e5e5ea;
+}
+.info {                				/***** info area *****/
+	background-color: #FEFAC0;
+	border: solid 2px black;
+	float: right;
+	width: 66%;
+	padding: 1em 1em 2em;
+	margin: 5px;	
+	overflow: auto;
+	max-height: 40%;
+}
+.info h2 {
+	color: #785616;
+	display: block;
+	font-size: 2em;
+	margin-left: 20px;
+	padding-bottom: 5px;
+}
+.info li {
+	color: #000;
+	margin-right: 5px;
+	padding: 0 20px;
+	border-right: solid 1px black; 
+	display: inline;
+}
+.info div li {
+	color: #000;
+	margin-right: 5px;
+	padding: 0 20px;
+	border-right: solid 1px black; 
+	display: inline;
+}
+
+.hidden {
+	display: none;
+}
+
+.visible {
+	display: block;
+}
+

@@ -1,0 +1,29 @@
+{
+	"musicList2": [
+		{
+			"name": "Family Tradtion",
+			"artist": "Hank Williams Jr.",
+			"album": "Family Tradtion",
+			"genre": "Country"
+		},
+		{
+			"name": "Hotel California",
+			"artist": "The Eagles",
+			"album": "On the Border",
+			"genre": "Rock"
+		},
+		{
+			"name": "Wish You Were Here",
+			"artist": "Pink Floyd",
+			"album": "The Wall",
+			"genre": "Rock"
+		},
+		{
+			"name": "Bridge Over Troubled Water",
+			"artist": "Simon and Garfunkel",
+			"album": "Bridge Over Troubled Water",
+			"genre": "Folk"
+		}
+	]
+}
+	

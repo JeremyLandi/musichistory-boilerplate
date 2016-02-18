@@ -1,0 +1,29 @@
+{
+	"musicList1": [
+		{
+			"name": "While My Guitar Gently Weeps",
+			"artist": "The Beatles",
+			"album": "The Beatles",
+			"genre": "Rock"
+		},
+		{
+			"name": "Stairway to Heaven",
+			"artist": "Led Zepppelin",
+			"album": "Led Zepppelin",
+			"genre": "Rock"
+		},
+		{
+			"name": "Light My Fire",
+			"artist": "The Doors",
+			"album": "The Doors",
+			"genre": "Rock"
+		},
+		{
+			"name": "Gimme Shelter",
+			"artist": "Rolling Stones",
+			"album": "Let It Bleed",
+			"genre": "Rock"
+		}
+	]
+}
+	
