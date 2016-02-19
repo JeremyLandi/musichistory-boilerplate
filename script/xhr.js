@@ -1,13 +1,8 @@
-
-
 $(document).ready(function() {
-
   $.ajax({
     url:"JSON/musicList1.json"
   }).done(function(data) {
-
   	addMusicList1(data);
-
 	});
 
 	$(document).on('click', '.moreSongs', function() {
@@ -17,18 +12,11 @@ $(document).ready(function() {
 	  }).done(function(data) {
 	  	addMusicList2(data);
 	  	$(".moreSongs").remove();
-
-
-	  	//make hidden on load and then on click hide, show
 	  });
-
 	})
-
 
 	$(document).on('click','.deleteButton', function() {
 		// console.log(this);
 	this.parentNode.remove();
-	
 	})
-
 })

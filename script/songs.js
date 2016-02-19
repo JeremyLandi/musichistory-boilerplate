@@ -1,67 +1,23 @@
 
-
-
-
-
-// $('#link-add').click
-
-// linkHome.addEventListener("click", linkHomeFunction);
-// linkAdd.addEventListener("click", linkAddFunction);
-
-// var linkHome = document.getElementById("link-home");
-// var linkAdd = document.getElementById("link-add");
-
-
-//HIDE-SHOW FUNCTIONS
-	// function linkHomeFunction() {
-		
-	// }
-// function linkAddFunction() {
-	
-// }
-
-
-// $("#music-view").click(function() {
-
-// })
-
-// var viewMusicSection = document.getElementById("music-view");
-// var addMusicSection = document.getElementById("add-view");
-var songPlaceHolder = "";
-var toDOM = document.getElementById('info');
-
-
-//BIND EVENTS
-
-//ADD-MUSIC SECTION BUILT OUT
-var songInfo = document.getElementById("add-view");
-var buildForm = "<label>Song Name:</label>"
-	buildForm += "<input type='text' id='song-input'>"
-	buildForm += "<label>Artist:</label>"
-	buildForm += "<input type='text' id='artist-input'>"
-	buildForm += "<label>Album:</label>"
-	buildForm += "<input type='text' id='album-input'>"
-	buildForm += "<button id='add' onclick='setSong();'>Add</button>";
-songInfo.innerHTML = buildForm; 
-
+var songPlaceHolder01 = "";
+var songPlaceHolder02 = "";
 
 function addMusicList1(data) {
    console.log(data.musicList1);
-
     var songElement = data.musicList1;
     for (var i = 0; i < songElement.length; i++) {
     	var currentSong = songElement[i];
-    	songPlaceHolder += "<div id='musicList--" + i + "' class='song'>";
-		songPlaceHolder += "<button class='deleteButton'>Delete</button>";
-  		songPlaceHolder += "<h2>" + currentSong.name + "</h2>";	
-		songPlaceHolder += "<ul>";
-		songPlaceHolder += "<li>" + currentSong.artist + "</li>";	
-		songPlaceHolder += "<li>" + currentSong.album + "</li>";	
-		songPlaceHolder += "</ul>";
-		songPlaceHolder += "</div>";
+    	songPlaceHolder01 += "<div id='musicList--" + i + "' class='song'>";
+		songPlaceHolder01 += "<button class='deleteButton'>Delete</button>";
+  		songPlaceHolder01 += "<h2>" + currentSong.name + "</h2>";	
+		songPlaceHolder01 += "<ul>";
+		songPlaceHolder01 += "<li>" + currentSong.artist + "</li>";	
+		songPlaceHolder01 += "<li>" + currentSong.album + "</li>";	
+		songPlaceHolder01 += "</ul>";
+		songPlaceHolder01 += "</div>";
     }
-    	songPlaceHolder +="<button id='moreSongs' class='moreSongs'>More Songs</button>";
-		toDOM.innerHTML = songPlaceHolder;
+    	songPlaceHolder01 +="<button id='moreSongs' class='moreSongs'>More Songs</button>";
+		$('#info').html(songPlaceHolder01);
   }
     
 function addMusicList2(data) {
@@ -70,24 +26,25 @@ function addMusicList2(data) {
     var songElement = data.musicList2;
     for (var i = 0; i < songElement.length; i++) {
     	var currentSong = songElement[i];
-    	songPlaceHolder += "<div id='musicList--" + counter + "' class='song'>";
-		songPlaceHolder += "<button class='deleteButton'>Delete</button>";
-  		songPlaceHolder += "<h2>" + currentSong.name + "</h2>";	
-		songPlaceHolder += "<ul>";
-		songPlaceHolder += "<li>" + currentSong.artist + "</li>";	
-		songPlaceHolder += "<li>" + currentSong.album + "</li>";	
-		songPlaceHolder += "</ul>";
-		songPlaceHolder += "</div>";
+    	songPlaceHolder02 += "<div id='musicList--" + counter + "' class='song'>";
+		songPlaceHolder02 += "<button class='deleteButton'>Delete</button>";
+  		songPlaceHolder02 += "<h2>" + currentSong.name + "</h2>";	
+		songPlaceHolder02 += "<ul>";
+		songPlaceHolder02 += "<li>" + currentSong.artist + "</li>";	
+		songPlaceHolder02 += "<li>" + currentSong.album + "</li>";	
+		songPlaceHolder02 += "</ul>";
+		songPlaceHolder02 += "</div>";
 		counter++;
     }
-		$(toDOM).append(songPlaceHolder);
+		$('#info').append(songPlaceHolder02);
   }    
-
+// Adds Song
+// called within buildform button
 function setSong() {
 	var counter = 8;
-	string = document.getElementById("song-input").value;
-	artistString = document.getElementById("artist-input").value;
-	albumString = document.getElementById("album-input").value;
+	string = $("#song-input").val();
+	artistString = $("#song-input").val();
+	albumString = $("#album-input").val();
 	
 	var addedSong = "";
 	addedSong += "<div id='musicList--" + counter + "' class='song'>";
@@ -98,13 +55,22 @@ function setSong() {
 	addedSong += "<li>" + albumString + "</li>";	
 	addedSong += "</ul>";	
 	addedSong += "</div>";	
-	console.log("addedSong", addedSong);
-	toDOM.innerHTML += addedSong;
-	document.getElementById("song-input").value = "";
-	document.getElementById("artist-input").value = "";
-	document.getElementById("album-input").value = "";
+	$('#info').append(addedSong);
+
+	$("#song-input").val("");
+	$("#artist-input").val(""); 
+	$("#album-input").val("");
 }
 
+//ADD-MUSIC SECTION BUILT OUT
+var buildForm = "<label>Song Name:</label>";
+	buildForm += "<input type='text' id='song-input'>";
+	buildForm += "<label>Artist:</label>";
+	buildForm += "<input type='text' id='artist-input'>";
+	buildForm += "<label>Album:</label>";
+	buildForm += "<input type='text' id='album-input'>";
+	buildForm += "<button id='add' onclick='setSong();'>Add</button>";
+	$("#add-view").html(buildForm); 
 
 // this is landing page
 $("#link-home").click(function() {
@@ -117,17 +83,6 @@ $("#link-add").click(function() {
 	$("#add-view").toggle();
 	$("#music-view").toggle();
 })
-
-
-
-
-
-
-
-
-
-
-
 
 
 
