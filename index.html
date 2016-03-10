@@ -4,123 +4,215 @@
 <head>
   <meta charset="utf-8">
   <title>Music History</title>
+	<script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
- -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
+	<div class="container"> 
 
-<div class="container">
-  
-	<nav class="nav">      <!--- navigation -->
-		<li><a href"#" id="link-home">View Music</li>
-		<li><a href"#" id="link-add">Add Music</li>
-	</nav>
-	<section id="music-view">
-		<div class="forms" class="clear">
-			<form id="length_form" class="length_form" action="">
-			  <label>Song Length:</label> 
-			  <input type="range" name="points" min="0" max="10">
-			
-			
-			<div id="artist_form" class="artist_form">								
-			  <label>Artist: </label>					<!--- artist -->
-			  <select class="artist-select" >			  	
-			  	<option value="" selected disabled="disabled">Options</option>  	
-				<option value="Elvis">Elvis</option>
-			    <option value="The Beatles">The Beatles</option>
-			    <option value="Rolling Stones">Rolling Stones</option>
-			    <option value="Pearl Jam">Pearl Jam</option>
-			    <option value="Led Zeppelin">Led Zeppelin</option> 
-			  </select>
+		<div id="nav-view" class="hidden">
+			<div class="row">
+				<nav class="navbar navbar-inverse col-md-12">
+				  <div class="container-fluid">
+				    <ul class="nav navbar-nav">
+				      <li>
+				      	<a id="link-home" class="active" href="#">Home</a>
+				      <li>
+				      <li>
+				      	<a id="link-add" class="active" href"#" >Add Music</a>
+				      </li>
+				      <li class="logout">
+				      	<a id="logout" class="active" href"#" >LOGOUT</a>
+				      </li>        
+				    </ul>
+				  </div>
+				</nav>
 			</div>
-
-			<div id="album_form" class="album_form" >										
-			  <label>Album: </label>					<!--- album  -->
-			  <select class="album-select">
-			  	<option value="" selected disabled="disabled">Options</option> 
-				  <optgroup label="Elvis">
-				    <option value="Raised on Rock">Raised on Rock</option>
-				    <option value="Good Times">Good Times</option>
-				    <option value="Promised Land">Promised Land</option>
-				    <option value="Today">Today</option>
-				    <option value="Moody Blues">Moody Blues</option>
-				  </optgroup>
-
-				  <optgroup label="The Beatles">
-				    <option value="Abbey Road">Abbey Road</option>
-				    <option value="Let It Be">Let It Be</option>
-				    <option value="Help!">Help!</option>
-				    <option value="The White Album">The White Album</option>
-				    <option value="Revolver">Revolver</option>
-				  </optgroup>
-
-				  <optgroup label="Rolling Stones">
-				    <option value="Let It Bleed">Let It Bleed</option>
-				    <option value="Stone Age">Stone Age</option>
-				    <option value="The Rolling Stones No.2">The Rolling Stones No.2</option>
-				    <option value="It's Only Rock 'n Roll">It's Only Rock 'n Roll</option>
-				    <option value="Forty Licks">Forty Licks</option>
-				  </optgroup>
-
-				  <optgroup label="Pearl Jam">
-				    <option value="Ten">Ten</option>
-				    <option value="Lighting Bolt">Lighting Bolt</option>
-				    <option value="Vitalogy">Vitalogy</option>
-				    <option value="Vs.">Vs.</option>
-				    <option value="No Code">No Code</option>
-				  </optgroup>
-
-				  <optgroup label="Led Zepplin">
-				    <option value="Physical Graffiti">Physical Graffiti</option>
-				    <option value="House of the Holy">House of the Holy</option>
-				    <option value="Led Zeppelin">album 3</option>
-				    <option value="In Through the Out Door">In Through the Out Door</option>
-				    <option value="Mothership">Mothership</option>
-				  </optgroup>
-			  </select>
-			</div>	
-			 <br>
-
-			<div id="genre_form" class="genre_form">   <!-- genre  -->
-				<label>Genre:</label> 
-					<ul class="checkbox_main">
-						<div class="checkbox_left">
-							<li><input type="checkbox" name="genre" value="Rock"> Rock </li>
-							<li><input type="checkbox" name="genre" value="Classical"> Classical </li>      
-							<li><input type="checkbox" name="genre" value="Jazz"> Jazz</li>
-						</div>
-						<div class="checkbox_right">
-							<li><input type="checkbox" name="genre" value="Pop"> Pop</li>
-							<li><input type="checkbox" name="genre" value="Blues"> Blues</li>
-							<li><input type="checkbox" name="genre" value="Hip Hop"> Hip Hop</li>
-						</div>	
-					</ul>	
-			</div>	
-			<input class="submit" type="button" value="Filter">	
-			</form>
-		</div>          <!--  end of "form" Div  -->
+		</div>
+		
+		<div id="login-view" class="row loggin">
+		  <div class="main">
+		    <h3>Please Log In, or <a id="signUp" class="signUpLink" href="#">Sign Up</a></h3>
+		    <div class="row">
+		      <div class="col-xs-6 col-sm-6 col-md-6">
+		        <a href="#" class="btn btn-lg btn-primary btn-block">Facebook</a>
+		      </div>
+		      <div class="col-xs-6 col-sm-6 col-md-6">
+		        <a href="#" class="btn btn-lg btn-info btn-block">Google</a>
+		      </div>
+		    </div>
+		    <div class="login-or">
+		      <hr class="hr-or">
+		      <span class="span-or">or</span>
+		    </div>
+		    <form role="form">
+		      <div class="form-group">
+		        <label for="inputUsernameEmail">Username or email</label>
+		        <input type="email" class="form-control" id="inputUsernameEmail">
+		      </div>
+		      <div class="form-group">
+		        <a class="pull-right" href="#">Forgot password?</a>
+		        <label for="inputPassword">Password</label>
+		        <input type="password" class="form-control" id="inputPassword">
+		      </div>
+		      <div class="checkbox pull-right">
+		        <label>
+		          <input type="checkbox">
+		          Remember me </label>
+		      </div>
+		      <button id="logInButton" type="submit" class="btn btn btn-primary">
+		        Log In
+		      </button>
+		    </form>
+		  </div>
+		</div>
+		<div id="signUp-view" class="row signUp hidden">
+	  <div class="main">
+		    <form role="form">
+		      <div class="form-group">
+		        <label for="inputUsernameEmail">Username or email</label>
+		        <input type="text" class="form-control" id="inputUsernameEmailSignUp">
+		      </div>
+		      <div class="form-group">		      
+		        <label for="inputPasswordSignUp">Password</label>
+		        <input type="password" class="form-control" id="inputPasswordSignUp">
+		      </div>
+		      <div class="checkbox pull-right">
+		        <label>
+		          <input type="checkbox">
+		          Remember me </label>
+		      </div>
+		      <button id="signUpButton" type="submit" class="btn btn btn-primary">
+		        Sign Up
+		      </button>
+		    </form>
+		  </div>
+		</div>
+		
 
 		
-		<div id="info" class="info"> <!-- SONG SECTION -->	
-		
-		<div id="songPlaceHolder"></div>
 
+	<div class="row">
+		<div class="col-sm-3">
+		<section id="music-view" class="hidden">
+			<div class="forms" class="clear">
+				<form id="length_form" class="length_form" action="">
+				  <label>Song Length:</label> 
+				  <input type="range" name="points" min="0" max="10">
+				
+				
+				<div id="artist_form" class="artist_form">								
+				  <label>Artist: </label>					<!--- artist -->
+				  <select class="artist-select" >			  	
+				  	<option value="" selected disabled="disabled">Options</option>  	
+					<option value="Elvis">Elvis</option>
+				    <option value="The Beatles">The Beatles</option>
+				    <option value="Rolling Stones">Rolling Stones</option>
+				    <option value="Pearl Jam">Pearl Jam</option>
+				    <option value="Led Zeppelin">Led Zeppelin</option> 
+				  </select>
+				</div>
+
+				<div id="album_form" class="album_form" >										
+				  <label>Album: </label>					<!--- album  -->
+				  <select class="album-select">
+				  	<option value="" selected disabled="disabled">Options</option> 
+					  <optgroup label="Elvis">
+					    <option value="Raised on Rock">Raised on Rock</option>
+					    <option value="Good Times">Good Times</option>
+					    <option value="Promised Land">Promised Land</option>
+					    <option value="Today">Today</option>
+					    <option value="Moody Blues">Moody Blues</option>
+					  </optgroup>
+
+					  <optgroup label="The Beatles">
+					    <option value="Abbey Road">Abbey Road</option>
+					    <option value="Let It Be">Let It Be</option>
+					    <option value="Help!">Help!</option>
+					    <option value="The White Album">The White Album</option>
+					    <option value="Revolver">Revolver</option>
+					  </optgroup>
+
+					  <optgroup label="Rolling Stones">
+					    <option value="Let It Bleed">Let It Bleed</option>
+					    <option value="Stone Age">Stone Age</option>
+					    <option value="The Rolling Stones No.2">The Rolling Stones No.2</option>
+					    <option value="It's Only Rock 'n Roll">It's Only Rock 'n Roll</option>
+					    <option value="Forty Licks">Forty Licks</option>
+					  </optgroup>
+
+					  <optgroup label="Pearl Jam">
+					    <option value="Ten">Ten</option>
+					    <option value="Lighting Bolt">Lighting Bolt</option>
+					    <option value="Vitalogy">Vitalogy</option>
+					    <option value="Vs.">Vs.</option>
+					    <option value="No Code">No Code</option>
+					  </optgroup>
+
+					  <optgroup label="Led Zepplin">
+					    <option value="Physical Graffiti">Physical Graffiti</option>
+					    <option value="House of the Holy">House of the Holy</option>
+					    <option value="Led Zeppelin">album 3</option>
+					    <option value="In Through the Out Door">In Through the Out Door</option>
+					    <option value="Mothership">Mothership</option>
+					  </optgroup>
+				  </select>
+				</div>	
+				 <br>
+
+				<div id="genre_form" class="genre_form">   <!-- genre  -->
+					<label>Genre:</label> 
+						<ul class="checkbox_main">
+							<div class="checkbox_left">
+								<li><input type="checkbox" name="genre" value="Rock"> Rock </li>
+								<li><input type="checkbox" name="genre" value="Classical"> Classical </li>      
+								<li><input type="checkbox" name="genre" value="Jazz"> Jazz</li>
+							</div>
+							<div class="checkbox_right">
+								<li><input type="checkbox" name="genre" value="Pop"> Pop</li>
+								<li><input type="checkbox" name="genre" value="Blues"> Blues</li>
+								<li><input type="checkbox" name="genre" value="Hip Hop"> Hip Hop</li>
+							</div>	
+						</ul>	
+				</div>	
+				<input class="submit" type="button" value="Filter">	
+				</form>
+			</div>          <!--  end of "form" Div  -->
 	</div>
+	
+			
+			<div id="info" class="info col-sm-8 hidden"> <!-- SONG SECTION -->	
+			
+			<div id="songPlaceHolder"></div>
 
-  </section>
+		</div>
 
-	<section class="hidden" id="add-view"> <!-- ADD MUSIC SECTION -->
-	</section>
+	  </section>
+		
+		<div class="col-sm-3">
+			<section class="hidden addMusic" id="add-view"></section> <!-- ADD MUSIC SECTION -->			
+		</div>
+		
+</div>
 
+	<footer>All Rights Reserved JL &reg</footer>
+	</div> 				 <!-- End of container Div -->
 
-<footer>All Rights Reserved JL &reg</footer>
-</div> 				 <!-- End of container Div -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	
+	<script type="text/javascript" src="script/xhr.js"></script>
+	<script type="text/javascript" src="script/songs.js"></script>
 
-<script src="../jQuery/bower_components/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="script/songs.js"></script>
-<script type="text/javascript" src="script/xhr.js"></script>
 </body>
 </html>
+
+
+
+
+
+
